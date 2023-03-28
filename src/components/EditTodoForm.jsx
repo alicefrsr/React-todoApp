@@ -14,7 +14,9 @@ const EditTodoForm = ({ id, onEdit, task, toggleIsEditing }) => {
     <form
       className='Todo-edit-form'
       onSubmit={handleSubmit}>
+      <label htmlFor='editedTask'></label>
       <input
+        id='editedTask'
         type='text'
         value={value}
         name={value}
