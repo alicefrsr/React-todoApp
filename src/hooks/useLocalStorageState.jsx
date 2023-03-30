@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function UseLocalStorageState(key, defaultValue) {
+export default function useLocalStorageState(key, defaultValue) {
   // 1. make piece of state based of value in localStorage
   const [state, setState] = useState(() => {
     let value;

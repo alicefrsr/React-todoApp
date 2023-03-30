@@ -3,7 +3,6 @@ import useTodoState from '../hooks/useTodoState';
 import './TodoApp.css';
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
-// import { v4 as uuidv4 } from 'uuid';
 import { TodosProvider } from '../context/todosContext';
 
 const TodoApp = () => {
