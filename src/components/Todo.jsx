@@ -5,15 +5,17 @@ import { useContext } from 'react';
 import { TodosContext, TodosProvider } from '../context/todosContext';
 
 const Todo = ({ id, task, isCompleted }) => {
-  const { removeTodo, toggleComplete } = useContext(TodosContext);
+  const { dispatch } = useContext(TodosContext);
   const [isEditing, toggleIsEditing] = useToggle();
 
   const handleRemove = () => {
-    removeTodo(id);
+    // removeTodo(id);
+    dispatch({ type: 'REMOVE', id: id });
   };
 
   const handleToggleComplete = () => {
-    toggleComplete(id);
+    // toggleComplete(id);
+    dispatch({ type: 'TOGGLE_COMPLETE', id: id });
   };
 
   return (

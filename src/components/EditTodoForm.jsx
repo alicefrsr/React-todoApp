@@ -3,12 +3,13 @@ import { useContext } from 'react';
 import { TodosContext } from '../context/todosContext';
 
 const EditTodoForm = ({ id, task, toggleIsEditing }) => {
-  const { editTodo } = useContext(TodosContext);
+  const { dispatch } = useContext(TodosContext);
   const [value, handleChangeEdit, reset] = useInputState(task);
 
   const handleSubmit = e => {
     e.preventDefault();
-    editTodo(id, value);
+    // editTodo(id, value);
+    dispatch({ type: 'EDIT', id: id, editedTask: value });
     reset();
     toggleIsEditing();
   };
