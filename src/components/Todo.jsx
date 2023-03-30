@@ -1,7 +1,7 @@
 import './Todo.css';
 import useToggle from '../hooks/useToggleState';
 import EditTodoForm from './EditTodoForm';
-import { useContext } from 'react';
+import { useContext, memo } from 'react';
 // import { TodosContext } from '../context/todosContext';
 import { DispatchContext } from '../context/todosContext';
 
@@ -16,6 +16,8 @@ const Todo = ({ id, task, isCompleted }) => {
   const handleToggleComplete = () => {
     dispatch({ type: 'TOGGLE_COMPLETE', id: id });
   };
+
+  console.log('TODO RE-RENDER:', id);
 
   return (
     <li>
@@ -58,4 +60,4 @@ const Todo = ({ id, task, isCompleted }) => {
     </li>
   );
 };
-export default Todo;
+export default memo(Todo);
