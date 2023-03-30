@@ -2,19 +2,18 @@ import './Todo.css';
 import useToggle from '../hooks/useToggleState';
 import EditTodoForm from './EditTodoForm';
 import { useContext } from 'react';
-import { TodosContext, TodosProvider } from '../context/todosContext';
+// import { TodosContext } from '../context/todosContext';
+import { DispatchContext } from '../context/todosContext';
 
 const Todo = ({ id, task, isCompleted }) => {
-  const { dispatch } = useContext(TodosContext);
+  const dispatch = useContext(DispatchContext);
   const [isEditing, toggleIsEditing] = useToggle();
 
   const handleRemove = () => {
-    // removeTodo(id);
     dispatch({ type: 'REMOVE', id: id });
   };
 
   const handleToggleComplete = () => {
-    // toggleComplete(id);
     dispatch({ type: 'TOGGLE_COMPLETE', id: id });
   };
 

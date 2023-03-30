@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react';
 import todoReducer from '../reducers/todoReducer';
-import useTodoState from '../hooks/useTodoState';
+// import useTodoState from '../hooks/useTodoState';
 
 const initialTodos = [
   { id: 1, task: 'Thing 1', isCompleted: false },
@@ -9,12 +9,16 @@ const initialTodos = [
 ];
 
 export const TodosContext = createContext();
+// splitting into 2 contexts to separate the state and methods changing the state, as most components are consuming dispatch
+export const DispatchContext = createContext();
 
 export function TodosProvider(props) {
-  // state + methods to alter state
   // const { todos, addTodo, removeTodo, toggleComplete, editTodo } = useTodoState(initialTodos);
-
   const [todos, dispatch] = useReducer(todoReducer, initialTodos);
 
-  return <TodosContext.Provider value={{ todos, dispatch }}>{props.children}</TodosContext.Provider>;
+  return (
+    <TodosContext.Provider value={todos}>
+      <DispatchContext.Provider value={dispatch}>{props.children}</DispatchContext.Provider>
+    </TodosContext.Provider>
+  );
 }

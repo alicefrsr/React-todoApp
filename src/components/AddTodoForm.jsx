@@ -1,22 +1,23 @@
 import './AddTodoForm.css';
 import useInputState from '../hooks/useInputState';
 import { useContext } from 'react';
-import { TodosContext } from '../context/todosContext';
+// import { TodosContext } from '../context/todosContext';
+import { DispatchContext } from '../context/todosContext';
 
 const AddTodoForm = () => {
   const [value, handleChangeInput, reset] = useInputState('');
   // const { addTodo } = useContext(TodosContext);
-  const { dispatch } = useContext(TodosContext);
+  const dispatch = useContext(DispatchContext);
 
   const handleSubmit = e => {
     e.preventDefault();
     if (value !== '') {
-      // addTodo(value);
       dispatch({ type: 'ADD', task: value });
       reset();
     }
   };
-  console.log('ADDTODO FORM RENDERING');
+  console.log('ADD TODO FORM RENDER');
+
   return (
     <div>
       <form
