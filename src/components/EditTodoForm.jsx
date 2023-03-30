@@ -1,12 +1,15 @@
 import useInputState from '../hooks/useInputState';
+import { useContext } from 'react';
+import { TodosContext } from '../context/todosContext';
 
-const EditTodoForm = ({ id, onEdit, task, toggleIsEditing }) => {
+const EditTodoForm = ({ id, task, toggleIsEditing }) => {
+  const { editTodo } = useContext(TodosContext);
   const [value, handleChangeEdit, reset] = useInputState(task);
 
   const handleSubmit = e => {
     e.preventDefault();
-    onEdit(id, value);
-    reset(); // resets field value
+    editTodo(id, value);
+    reset();
     toggleIsEditing();
   };
 
