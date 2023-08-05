@@ -4,6 +4,8 @@ import EditTodoForm from './EditTodoForm';
 import { useContext, memo } from 'react';
 // import { TodosContext } from '../context/todosContext';
 import { DispatchContext } from '../context/todosContext';
+import { FaPen } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 
 const Todo = ({ id, task, isCompleted }) => {
   const dispatch = useContext(DispatchContext);
@@ -47,12 +49,12 @@ const Todo = ({ id, task, isCompleted }) => {
             <button
               aria-label={`edit ${task}`}
               onClick={toggleIsEditing}>
-              <i className='fas fa-pen'></i>
+              <FaPen />
             </button>
             <button
               aria-label={`delete ${task}`}
               onClick={handleRemove}>
-              <i className='fas fa-trash'></i>
+              <FaTrash />
             </button>
           </div>
         </div>
