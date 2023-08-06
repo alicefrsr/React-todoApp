@@ -28,7 +28,7 @@ const EditTodoForm = ({ id, task, toggleIsEditing }) => {
         name={value}
         onChange={handleChangeEdit}
       />
-      <button type='submit'>Save changes</button>
+      <button type='submit'>Save</button>
     </form>
   );
 };

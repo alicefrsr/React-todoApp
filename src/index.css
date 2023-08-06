@@ -11,4 +11,12 @@ body {
   font-size: 1.2rem;
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  overflow-y: scroll;
+}
+
+@media (max-width: 414px) {
+  html,
+  body {
+    background: #60b7eb;
+  }
 }

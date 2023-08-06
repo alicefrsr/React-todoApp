@@ -16,7 +16,7 @@ const AddTodoForm = () => {
       reset();
     }
   };
-  console.log('ADD TODO FORM RENDER');
+  // console.log('ADD TODO FORM RENDER');
 
   return (
     <div>

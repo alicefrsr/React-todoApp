@@ -3,10 +3,10 @@
   margin: 0 -3rem 4px;
   padding: 1.1rem 3rem;
   height: 77px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   transition: opacity 500ms ease-in-out;
 }
@@ -64,7 +64,6 @@ input[type='checkbox']:checked:after {
   /* -webkit-appearance: none; */
   cursor: pointer;
   color: #fff;
-  /* border: 1px solid red; */
 }
 
 .Todo-buttons button:hover,
@@ -72,10 +71,13 @@ input[type='checkbox']:checked:after {
   color: #fd4747;
 }
 
+/* TODO - EDIT FORM */
+
 .Todo-edit-form {
   display: flex;
   flex-wrap: wrap;
 }
+
 .Todo-edit-form label {
   min-width: 100%;
   margin-bottom: 0.5rem;
@@ -89,7 +91,9 @@ input[type='checkbox']:checked:after {
   padding: 0 1.5em;
   font-size: initial;
   border-radius: 5px;
+  /* width: 60%; */
 }
+
 .Todo-edit-form button {
   border-radius: 5px;
   padding: 0 1.3rem;
@@ -99,7 +103,7 @@ input[type='checkbox']:checked:after {
   text-transform: uppercase;
   font-weight: bold;
   /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  margin-left: 5px;
+  margin-left: 6px;
   cursor: pointer;
   transition: background 0.2s ease-out;
   font-size: 0.8rem;
@@ -111,4 +115,10 @@ input[type='checkbox']:checked:after {
 .Todo-edit-form button {
   font-family: 'Roboto', sans-serif;
   height: 3rem;
+}
+
+@media (max-width: 414px) {
+  .Todo {
+    padding: 1.1rem 1rem;
+  }
 }
