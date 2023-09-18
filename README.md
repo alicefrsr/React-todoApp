@@ -1,17 +1,17 @@
-# React Todo app
+# React To-do app
 
-> A simple todo app.
+> A simple to-do app.
 
 Built to learn and practice: React basics, custom hooks and useReducer, local
 storage.
 
-### Visit the site:
+### Live App:
 
 https://another-todoapp.netlify.app/
 
 ### Functionalities:
 
-- todos: add, mark as completed, edit, delete
+- to-dos: add, mark as completed, edit, delete
 - saved to local storage
 
 This project was bootstrapped with [Vite](https://vitejs.dev/).
