@@ -14,11 +14,10 @@ https://another-todoapp.netlify.app/
 - to-dos: add, mark as completed, edit, delete
 - saved to local storage
 
-This project was bootstrapped with [Vite](https://vitejs.dev/).
-
 ### Available Scripts
 
-In the project directory, you can run:
+This project was bootstrapped with [Vite](https://vitejs.dev/). In the project
+directory, you can run:
 
 #### `npm install`
 
